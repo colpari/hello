@@ -10,10 +10,12 @@ import {
 
 export default {
   login(creds) {
+    console.log("AuthApi.login()", creds)
     return new Promise((resolve, reject) => {
       axios
         .post('auth/sign_in', creds)
         .then(response => {
+          console.log("axios response: ", response)
           setAuthCredentials(response);
           resolve(response.data);
         })
