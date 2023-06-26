@@ -6,6 +6,7 @@ import { routes as contactRoutes } from './contacts/routes';
 import { routes as notificationRoutes } from './notifications/routes';
 import { frontendURL } from '../../helper/URLHelper';
 import helpcenterRoutes from './helpcenter/helpcenter.routes';
+import calendarRoutes from './calendar/calendar.routes';
 
 const Suspended = () => import('./suspended/Index');
 
@@ -21,6 +22,7 @@ export default {
         ...contactRoutes,
         ...searchRoutes,
         ...notificationRoutes,
+        ...calendarRoutes.routes
       ],
     },
     {

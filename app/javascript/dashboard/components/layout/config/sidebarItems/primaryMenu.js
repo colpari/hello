@@ -47,6 +47,15 @@ const primaryMenuItems = accountId => [
     roles: ['administrator'],
   },
   {
+    icon: 'calendar-clock',
+    key: 'calendar',
+    label: 'CALENDAR.TITLE',
+    featureFlag: FEATURE_FLAGS.HELP_CENTER,
+    toState: frontendURL(`accounts/${accountId}/calendar`),
+    toStateName: 'hello_calendar',
+    roles: ['administrator', 'agent'],
+  },
+  {
     icon: 'settings',
     key: 'settings',
     label: 'SETTINGS',

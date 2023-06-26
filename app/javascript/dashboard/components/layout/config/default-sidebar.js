@@ -1,3 +1,4 @@
+import calendar from './sidebarItems/calendar';
 import conversations from './sidebarItems/conversations';
 import contacts from './sidebarItems/contacts';
 import reports from './sidebarItems/reports';
@@ -10,6 +11,7 @@ export const getSidebarItems = accountId => ({
   primaryMenu: primaryMenu(accountId),
   secondaryMenu: [
     conversations(accountId),
+    calendar(accountId),
     contacts(accountId),
     reports(accountId),
     campaigns(accountId),
