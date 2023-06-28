@@ -27,6 +27,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/hello_login' => redirect(@user_openid_connect_omniauth_authorize_path)
+
   get '/api', to: 'api#index'
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do

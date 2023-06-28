@@ -165,6 +165,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
+# added by colpari
+gem 'omniauth_openid_connect'
+
 ### Gems required only in specific deployment environments ###
 ##############################################################
 

@@ -98,9 +98,9 @@ export const getters = {
 // actions
 export const actions = {
   login(_, { ssoAccountId, ssoConversationId, ...credentials }) {
-    console.log("dashboard/store/auth::action::login: 1 ssoAccountId=", ssoAccountId, "ssoConversationId=", ssoConversationId, "credentials="credentials)
+    console.log("dashboard/store/auth::action::login: 1 ssoAccountId=", ssoAccountId, "ssoConversationId=", ssoConversationId, "credentials=", credentials)
     return new Promise((resolve, reject) => {
-      console.log("dashboard/store/auth::action::login: 2 ssoAccountId=", ssoAccountId, "ssoConversationId=", ssoConversationId, "credentials="credentials)
+      console.log("dashboard/store/auth::action::login: 2 ssoAccountId=", ssoAccountId, "ssoConversationId=", ssoConversationId, "credentials=", credentials)
       authAPI
         .login(credentials)
         .then(response => {
