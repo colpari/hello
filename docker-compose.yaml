@@ -76,7 +76,7 @@ services:
     ports:
       - "3035:3035" # Webpack dev server
     environment:
-      - WEBPACKER_DEV_SERVER_HOST=192.168.178.75
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
       - NODE_ENV=development
       - RAILS_ENV=development
     entrypoint: docker/entrypoints/webpack.sh
@@ -84,7 +84,6 @@ services:
 
   postgres:
     image: postgres:12
-    restart: always
     # ports:
     #   - '5432:5432'
     volumes:
@@ -96,7 +95,6 @@ services:
 
   redis:
     image: redis:alpine
-    restart: always
     command: ["sh", "-c", "redis-server --requirepass \"$REDIS_PASSWORD\""]
     env_file: .env
     volumes:
