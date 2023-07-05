@@ -2,6 +2,7 @@ class DeviseOverrides::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCa
   include EmailHelper
 
   def omniauth_success
+    Rails.logger.info "omniauth_success 2"
     get_resource_from_auth_hash
 
     @resource.present? ? sign_in_user : sign_up_user
@@ -10,8 +11,10 @@ class DeviseOverrides::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCa
   private
 
   def sign_in_user
+    Rails.logger.info "sign_in_user p=#{params} ah=#{auth_hash} r=#{@resource}"
     @resource.skip_confirmation! if confirmable_enabled?
 
+    Rails.logger.info "sign_in_user for #{@resource}"
     # once the resource is found and verified
     # we can just send them to the login page again with the SSO params
     # that will log them in
@@ -24,9 +27,8 @@ class DeviseOverrides::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCa
     return redirect_to login_page_url(error: 'business-account-only') unless validate_business_account?
 
     create_account_for_user
-    token = @resource.send(:set_reset_password_token)
-    frontend_url = ENV.fetch('FRONTEND_URL', nil)
-    redirect_to "#{frontend_url}/app/auth/password/edit?config=default&reset_password_token=#{token}"
+    Rails.logger.info "signing in fresh user #{@resource}"
+    sign_in_user
   end
 
   def login_page_url(error: nil, email: nil, sso_auth_token: nil)
@@ -58,13 +60,21 @@ class DeviseOverrides::OmniauthCallbacksController < DeviseTokenAuth::OmniauthCa
     auth_hash['info']['email'].exclude?('@gmail.com')
   end
 
+  def create_random_password
+    charset = Array('A'..'Z') + Array('a'..'z') + Array(['?','-','$','#','+','*','=','/']) + Array('0'..'9')
+    Array.new(64) { charset.sample }.join
+  end
+
   def create_account_for_user
+    Rails.logger.info "create_account_for_user for #{auth_hash['info']['email']} / #{auth_hash['uid']}"
     @resource, @account = AccountBuilder.new(
       account_name: extract_domain_without_tld(auth_hash['info']['email']),
       user_full_name: auth_hash['info']['name'],
       email: auth_hash['info']['email'],
       locale: I18n.locale,
-      confirmed: auth_hash['info']['email_verified']
+      #confirmed: auth_hash['info']['email_verified'],
+      confirmed: true,
+      user_password: create_random_password
     ).perform
     Avatar::AvatarFromUrlJob.perform_later(@resource, auth_hash['info']['image'])
   end

@@ -4,6 +4,11 @@ class DeviseOverrides::SessionsController < DeviseTokenAuth::SessionsController
   wrap_parameters format: []
   before_action :process_sso_auth_token, only: [:create]
 
+  def new # accept GET requests
+    Rails.logger.info "SessionsController::new #{params}"
+    create
+  end
+
   def create
     # Authenticate user via the temporary sso auth token
     if params[:sso_auth_token].present? && @resource.present?

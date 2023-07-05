@@ -1,3 +1,8 @@
+OmniAuth.config.allowed_request_methods = [:get, :post]
+OmniAuth.config.logger = Rails.logger if Rails.env.development?
+
+require './config/initializers/omniauth-keycloak-openid-colpari.rb'
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -248,6 +253,16 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :kc, ENV.fetch('OIDC_ID', nil), ENV.fetch('OIDC_SECRET', nil),
+    name: 'kc',
+    scope: [:openid, :email, :profile],
+    #provider_ignores_state: true,
+    client_options: {
+      site: ENV.fetch('KC_SITE', nil),
+      realm: ENV.fetch('KC_REALM', nil)
+    },
+    :strategy_class => OmniAuth::Strategies::KeycloakOpenIdColpari
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

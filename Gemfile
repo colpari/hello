@@ -43,11 +43,12 @@ gem 'gmail_xoauth'
 gem 'csv-safe'
 
 ##-- for active storage --##
-gem 'aws-sdk-s3', require: false
+# deactivated by colpari
+#gem 'aws-sdk-s3', require: false
 # original gem isn't maintained actively
 # we wanted updated version of faraday which is a dependency for slack-ruby-client
-gem 'azure-storage-blob', git: 'https://github.com/chatwoot/azure-storage-ruby', branch: 'chatwoot', require: false
-gem 'google-cloud-storage', require: false
+#gem 'azure-storage-blob', git: 'https://github.com/chatwoot/azure-storage-ruby', branch: 'chatwoot', require: false
+#gem 'google-cloud-storage', require: false
 gem 'image_processing'
 
 ##-- gems for database --#
@@ -166,7 +167,8 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 # added by colpari
-gem 'omniauth_openid_connect'
+gem 'omniauth-keycloak'
+gem 'activerecord-session_store'
 
 ### Gems required only in specific deployment environments ###
 ##############################################################

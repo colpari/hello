@@ -1,19 +1,4 @@
 GIT
-  remote: https://github.com/chatwoot/azure-storage-ruby
-  revision: 9957cf899d33a285b5dfe15bdb875292398e392b
-  branch: chatwoot
-  specs:
-    azure-storage-blob (2.0.3)
-      azure-storage-common (~> 2.0)
-      nokogiri (~> 1, >= 1.10.8)
-    azure-storage-common (2.0.4)
-      faraday (~> 2.0)
-      faraday-follow_redirects (~> 0.3.0)
-      faraday-net_http_persistent (~> 2.0)
-      net-http-persistent (~> 4.0)
-      nokogiri (~> 1, >= 1.10.8)
-
-GIT
   remote: https://github.com/chatwoot/devise-secure_password
   revision: adcc85fe1babfe40feae73dbcae64d14fff86e69
   branch: chatwoot
@@ -89,6 +74,12 @@ GEM
       activesupport (= 7.0.5)
     activerecord-import (1.4.1)
       activerecord (>= 4.2)
+    activerecord-session_store (2.0.0)
+      actionpack (>= 5.2.4.1)
+      activerecord (>= 5.2.4.1)
+      multi_json (~> 1.11, >= 1.11.2)
+      rack (>= 2.0.8, < 3)
+      railties (>= 5.2.4.1)
     activestorage (7.0.5)
       actionpack (= 7.0.5)
       activejob (= 7.0.5)
@@ -122,26 +113,9 @@ GEM
       rake (>= 10.4, < 14.0)
     ast (2.4.2)
     attr_extras (7.1.0)
-    attr_required (1.0.1)
     audited (5.3.3)
       activerecord (>= 5.0, < 7.1)
       request_store (~> 1.2)
-    aws-eventstream (1.2.0)
-    aws-partitions (1.760.0)
-    aws-sdk-core (3.171.1)
-      aws-eventstream (~> 1, >= 1.0.2)
-      aws-partitions (~> 1, >= 1.651.0)
-      aws-sigv4 (~> 1.5)
-      jmespath (~> 1, >= 1.6.1)
-    aws-sdk-kms (1.64.0)
-      aws-sdk-core (~> 3, >= 3.165.0)
-      aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.122.0)
-      aws-sdk-core (~> 3, >= 3.165.0)
-      aws-sdk-kms (~> 1)
-      aws-sigv4 (~> 1.4)
-    aws-sigv4 (1.5.2)
-      aws-eventstream (~> 1, >= 1.0.2)
     barnes (0.0.9)
       multi_json (~> 1)
       statsd-ruby (~> 1.1)
@@ -186,7 +160,6 @@ GEM
       libddwaf (~> 1.8.2.0.0)
       msgpack
     debase-ruby_core_source (3.2.0)
-    declarative (0.0.20)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -198,8 +171,6 @@ GEM
       devise (> 3.5.2, < 5)
       rails (>= 4.2.0, < 7.1)
     diff-lcs (1.5.0)
-    digest-crc (0.6.4)
-      rake (>= 12.0.0, < 14.0.0)
     docile (1.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -230,7 +201,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.2.0)
       i18n (>= 1.8.11, < 2)
-    faraday (2.7.4)
+    faraday (2.7.9)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-follow_redirects (0.3.0)
@@ -241,9 +212,6 @@ GEM
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
     faraday-net_http (3.0.2)
-    faraday-net_http_persistent (2.1.0)
-      faraday (~> 2.5)
-      net-http-persistent (~> 4.0)
     faraday-retry (2.1.0)
       faraday (~> 2.0)
     fcm (1.0.8)
@@ -272,40 +240,14 @@ GEM
       activesupport (>= 5.0)
     gmail_xoauth (0.4.2)
       oauth (>= 0.3.6)
-    google-apis-core (0.11.0)
-      addressable (~> 2.5, >= 2.5.1)
-      googleauth (>= 0.16.2, < 2.a)
-      httpclient (>= 2.8.1, < 3.a)
-      mini_mime (~> 1.0)
-      representable (~> 3.0)
-      retriable (>= 2.0, < 4.a)
-      rexml
-      webrick
-    google-apis-iamcredentials_v1 (0.17.0)
-      google-apis-core (>= 0.11.0, < 2.a)
-    google-apis-storage_v1 (0.19.0)
-      google-apis-core (>= 0.9.0, < 2.a)
-    google-cloud-core (1.6.0)
-      google-cloud-env (~> 1.0)
-      google-cloud-errors (~> 1.0)
     google-cloud-dialogflow-v2 (0.23.0)
       gapic-common (>= 0.18.0, < 2.a)
       google-cloud-errors (~> 1.0)
       google-cloud-location (>= 0.4, < 2.a)
-    google-cloud-env (1.6.0)
-      faraday (>= 0.17.3, < 3.0)
     google-cloud-errors (1.3.1)
     google-cloud-location (0.4.0)
       gapic-common (>= 0.17.1, < 2.a)
       google-cloud-errors (~> 1.0)
-    google-cloud-storage (1.44.0)
-      addressable (~> 2.8)
-      digest-crc (~> 0.4)
-      google-apis-iamcredentials_v1 (~> 0.1)
-      google-apis-storage_v1 (~> 0.19.0)
-      google-cloud-core (~> 1.6)
-      googleauth (>= 0.16.2, < 2.a)
-      mini_mime (~> 1.0)
     google-cloud-translate-v3 (0.6.0)
       gapic-common (>= 0.17.1, < 2.a)
       google-cloud-errors (~> 1.0)
@@ -358,7 +300,6 @@ GEM
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    httpclient (2.8.3)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -367,7 +308,6 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    jmespath (1.6.2)
     jquery-rails (4.5.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -386,7 +326,7 @@ GEM
       hana (~> 1.3)
       regexp_parser (~> 2.0)
       uri_template (~> 0.7)
-    jwt (2.7.0)
+    jwt (2.7.1)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -450,15 +390,13 @@ GEM
     mini_magick (4.12.0)
     mini_mime (1.1.2)
     mini_portile2 (2.8.2)
-    minitest (5.18.0)
+    minitest (5.18.1)
     mock_redis (0.36.0)
       ruby2_keywords
     msgpack (1.7.0)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.3.0)
-    net-http-persistent (4.0.2)
-      connection_pool (~> 2.2)
     net-imap (0.3.4)
       date
       net-protocol
@@ -500,33 +438,21 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-google-oauth2 (1.1.1)
+    omniauth-google-oauth2 (0.8.0)
       jwt (>= 2.0)
-      oauth2 (~> 2.0.6)
-      omniauth (~> 2.0)
-      omniauth-oauth2 (~> 1.8.0)
-    omniauth-oauth2 (1.8.0)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
+    omniauth-keycloak (1.5.1)
+      faraday
+      json-jwt (> 1.13.0)
+      omniauth (>= 2.0)
+      omniauth-oauth2 (~> 1.7.1)
+    omniauth-oauth2 (1.7.3)
       oauth2 (>= 1.4, < 3)
-      omniauth (~> 2.0)
+      omniauth (>= 1.9, < 3)
     omniauth-rails_csrf_protection (1.0.1)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
-    omniauth_openid_connect (0.7.1)
-      omniauth (>= 1.9, < 3)
-      openid_connect (~> 2.2)
-    openid_connect (2.2.0)
-      activemodel
-      attr_required (>= 1.0.0)
-      faraday (~> 2.0)
-      faraday-follow_redirects
-      json-jwt (>= 1.16)
-      net-smtp
-      rack-oauth2 (~> 2.2)
-      swd (~> 2.0)
-      tzinfo
-      validate_email
-      validate_url
-      webfinger (~> 2.0)
     openssl (3.1.0)
     orm_adapter (0.5.0)
     os (1.1.4)
@@ -558,13 +484,6 @@ GEM
       rack (>= 2.0.0)
     rack-mini-profiler (3.1.0)
       rack (>= 1.2.0)
-    rack-oauth2 (2.2.0)
-      activesupport
-      attr_required
-      faraday (~> 2.0)
-      faraday-follow_redirects
-      json-jwt (>= 1.11.0)
-      rack (>= 2.1.0)
     rack-protection (3.0.6)
       rack
     rack-proxy (0.7.6)
@@ -611,10 +530,6 @@ GEM
     redis-namespace (1.10.0)
       redis (>= 4)
     regexp_parser (2.8.0)
-    representable (3.2.0)
-      declarative (< 0.1.0)
-      trailblazer-option (>= 0.1.1, < 0.2.0)
-      uber (< 0.2.0)
     request_store (1.5.1)
       rack (>= 1.4)
     responders (3.1.0)
@@ -625,7 +540,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    retriable (3.1.2)
     rexml (3.2.5)
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
@@ -756,11 +670,6 @@ GEM
     stackprof (0.2.25)
     statsd-ruby (1.5.0)
     stripe (8.5.0)
-    swd (2.0.2)
-      activesupport (>= 3)
-      attr_required (>= 0.0.5)
-      faraday (~> 2.0)
-      faraday-follow_redirects
     telephone_number (1.4.20)
     test-prof (1.2.1)
     thor (1.2.2)
@@ -769,7 +678,6 @@ GEM
       activesupport
       i18n
     timeout (0.3.2)
-    trailblazer-option (0.1.2)
     twilio-ruby (5.77.0)
       faraday (>= 0.9, < 3.0)
       jwt (>= 1.5, < 3.0)
@@ -780,7 +688,6 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
-    uber (0.1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
@@ -792,13 +699,7 @@ GEM
     valid_email2 (4.0.6)
       activemodel (>= 3.2)
       mail (~> 2.5)
-    validate_email (0.1.6)
-      activemodel (>= 3.0)
-      mail (>= 2.2.5)
-    validate_url (1.0.15)
-      activemodel (>= 3.0.0)
-      public_suffix
-    version_gem (1.1.2)
+    version_gem (1.1.3)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -810,10 +711,6 @@ GEM
       hkdf (~> 1.0)
       jwt (~> 2.0)
       openssl (~> 3.0)
-    webfinger (2.1.2)
-      activesupport
-      faraday (~> 2.0)
-      faraday-follow_redirects
     webmock (3.18.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
@@ -823,7 +720,6 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    webrick (1.8.1)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -847,14 +743,13 @@ PLATFORMS
 DEPENDENCIES
   active_record_query_trace
   activerecord-import
+  activerecord-session_store
   acts-as-taggable-on
   administrate
   administrate-field-active_storage
   annotate
   attr_extras
   audited (~> 5.3)
-  aws-sdk-s3
-  azure-storage-blob!
   barnes
   bootsnap
   brakeman
@@ -884,7 +779,6 @@ DEPENDENCIES
   geocoder
   gmail_xoauth
   google-cloud-dialogflow-v2
-  google-cloud-storage
   google-cloud-translate-v3
   groupdate
   grpc
@@ -910,9 +804,9 @@ DEPENDENCIES
   newrelic_rpm
   omniauth
   omniauth-google-oauth2
+  omniauth-keycloak
   omniauth-oauth2
   omniauth-rails_csrf_protection (~> 1.0)
-  omniauth_openid_connect
   pg
   pg_search
   procore-sift
@@ -969,4 +863,4 @@ RUBY VERSION
    ruby 3.2.2p185
 
 BUNDLED WITH
-   2.4.14
+   2.4.15
