@@ -1,4 +1,4 @@
-FROM chatwoot:development
+FROM colpari-hello:development
 
 RUN chmod +x docker/entrypoints/webpack.sh
 
