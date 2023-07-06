@@ -14,46 +14,56 @@
 
 # ------- Branding Related Config ------- #
 - name: INSTALLATION_NAME
-  value: 'Chatwoot'
+  value: 'colpari Hello'
   display_title: 'Installation Name'
   description: 'The installation wide name that would be used in the dashboard, title etc.'
+  locked: false
 - name: LOGO_THUMBNAIL
-  value: '/brand-assets/logo_thumbnail.svg'
+  value: '/brand-assets/logo_thumbnail.png'
   display_title: 'Logo Thumbnail'
   description: 'The thumbnail that would be used for favicon (512px X 512px)'
+  locked: false
 - name: LOGO
-  value: '/brand-assets/logo.svg'
+  value: '/brand-assets/logo.png'
   display_title: 'Logo'
   description: 'The logo that would be used on the dashboard, login page etc.'
+  locked: false
 - name: LOGO_DARK
-  value: '/brand-assets/logo_dark.svg'
+  value: '/brand-assets/logo_dark.png'
   display_title: 'Logo Dark Mode'
   description: 'The logo that would be used on the dashboard, login page etc. for dark mode'
+  locked: false
 - name: BRAND_URL
-  value: 'https://www.chatwoot.com'
+  value: 'https://colpari.cx'
   display_title: 'Brand URL'
   description: 'The URL that would be used in emails under the section “Powered By”'
+  locked: false
 - name: WIDGET_BRAND_URL
-  value: 'https://www.chatwoot.com'
+  value: 'https://colpari.cx'
   display_title: 'Widget Brand URL'
   description: 'The URL that would be used in the widget under the section “Powered By”'
+  locked: false
 - name: BRAND_NAME
-  value: 'Chatwoot'
+  value: 'colpari Hello'
   display_title: 'Brand Name'
   description: 'The name that would be used in emails and the widget'
+  locked: false
 - name: TERMS_URL
-  value: 'https://www.chatwoot.com/terms-of-service'
+  value: '/terms-of-service'
   display_title: 'Terms URL'
   description: 'The terms of service URL displayed in Signup Page'
+  locked: false
 - name: PRIVACY_URL
-  value: 'https://www.chatwoot.com/privacy-policy'
+  value: '/privacy-policy'
   display_title: 'Privacy URL'
   description: 'The privacy policy URL displayed in the app'
+  locked: false
 - name: DISPLAY_MANIFEST
   value: true
-  display_title: 'Chatwoot Metadata'
-  description: 'Display default Chatwoot metadata like favicons and upgrade warnings'
+  display_title: 'colpari Hello Metadata'
+  description: 'Display default colpari Hello metadata like favicons and upgrade warnings'
   type: boolean
+  locked: false
 # ------- End of Branding Related Config ------- #
 
 # ------- Signup & Account Related Config ------- #
@@ -127,23 +137,23 @@
 - name: CHATWOOT_INBOX_TOKEN
   value:
   display_title: 'Inbox Token'
-  description: 'The Chatwoot Inbox Token for Contact Support in Cloud'
+  description: 'The colpari Hello Inbox Token for Contact Support in Cloud'
   locked: false
 - name: CHATWOOT_INBOX_HMAC_KEY
   value:
   display_title: 'Inbox HMAC Key'
-  description: 'The Chatwoot Inbox HMAC Key for Contact Support in Cloud'
+  description: 'The colpari Hello Inbox HMAC Key for Contact Support in Cloud'
   locked: false
 - name: CHATWOOT_CLOUD_PLANS
   value:
   description: 'Config to store stripe plans for cloud'
 - name: DEPLOYMENT_ENV
   value: self-hosted
-  description: 'The deployment environment of the installation, to differentiate between Chatwoot cloud and self-hosted'
+  description: 'The deployment environment of the installation, to differentiate between colpari Hello cloud and self-hosted'
 - name: ANALYTICS_TOKEN
   value:
   display_title: 'Analytics Token'
-  description: 'The June.so analytics token for Chatwoot cloud'
+  description: 'The June.so analytics token for colpari Hello cloud'
 - name: CLEARBIT_API_KEY
   value:
   display_title: 'Clearbit API Key'
@@ -159,13 +169,13 @@
   description: 'The number of licenses purchased for the installation, retrieved from the billing API'
 - name: CHATWOOT_SUPPORT_WEBSITE_TOKEN
   value:
-  description: 'The Chatwoot website token, used to identify the Chatwoot inbox and display the "Contact Support" option on the billing page'
+  description: 'The colpari Hello website token, used to identify the colpari Hello inbox and display the "Contact Support" option on the billing page'
 - name: CHATWOOT_SUPPORT_SCRIPT_URL
   value:
-  description: 'The Chatwoot script base URL, to display the "Contact Support" option on the billing page'
+  description: 'The colpari Hello script base URL, to display the "Contact Support" option on the billing page'
 - name: CHATWOOT_SUPPORT_IDENTIFIER_HASH
   value:
-  description: 'The Chatwoot identifier hash, to validate the contact in the live chat window.'
+  description: 'The colpari Hello identifier hash, to validate the contact in the live chat window.'
 # ------- End of Chatwoot Internal Config for Self Hosted ----#
 
 ## ------ Configs added for enterprise clients ------ ##
