@@ -57,6 +57,7 @@ export default {
 html,
 body {
   font-family:
+    Ubuntu,
     'PlusJakarta',
     -apple-system,
     BlinkMacSystemFont,

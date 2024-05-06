@@ -1,0 +1,128 @@
+:root {
+  --main-brand-color: #0095BA;
+
+  /* NOTE: lightness scale aligned to be compatible with colpari main color #0095BA == lightness 36% == hello-500
+    FIXME: firefox does not support this currently. if this is still the case when releasing colpari hello, we have
+            to generate the whole scale explicitly and cannot use a --main-brand-color variable
+*/
+  --hello-25: from var(--main-brand-color) h s calc(l + 0.60);
+  --hello-50: from var(--main-brand-color) h s calc(l + 0.54);
+  --hello-75: from var(--main-brand-color) h s calc(l + 0.45);
+  --hello-100: from var(--main-brand-color) h s calc(l + 0.36);
+  --hello-200: from var(--main-brand-color) h s calc(l + 0.27);
+  --hello-300: from var(--main-brand-color) h s calc(l + 0.18);
+  --hello-400: from var(--main-brand-color) h s calc(l + 0.09);
+  --hello-500: from var(--main-brand-color) h s l;
+  --hello-600: from var(--main-brand-color) h s calc(l - 0.09);
+  --hello-700: from var(--main-brand-color) h s calc(l - 0.18);
+  --hello-800: from var(--main-brand-color) h s calc(l - 0.27);
+  --hello-900: from var(--main-brand-color) h s calc(l - 0.36);
+
+  --w-25: hsl(var(--hello-25));
+  --w-50: hsl(var(--hello-50));
+  --w-75: hsl(var(--hello-75));
+  --w-100: hsl(var(--hello-100));
+  --w-200: hsl(var(--hello-200));
+  --w-300: hsl(var(--hello-300));
+  --w-400: hsl(var(--hello-400));
+  --w-500: hsl(var(--hello-500));
+  --w-600: hsl(var(--hello-600));
+  --w-700: hsl(var(--hello-700));
+  --w-800: hsl(var(--hello-800));
+  --w-900: hsl(var(--hello-900));
+
+
+
+  /* NOTE: everything else is set to colpari-orange to find it if it is used somewhere (does not look like so far)
+   */
+  --g-50: #FC7A1E;
+  --g-100: #FC7A1E;
+  --g-200: #FC7A1E;
+  --g-300: #FC7A1E;
+  --g-400: #FC7A1E;
+  --g-500: #FC7A1E;
+  --g-600: #FC7A1E;
+  --g-700: #FC7A1E;
+  --g-800: #FC7A1E;
+  --g-900: #FC7A1E;
+
+  --y-50: #FC7A1E;
+  --y-100: #FC7A1E;
+  --y-200: #FC7A1E;
+  --y-300: #FC7A1E;
+  --y-400: #FC7A1E;
+  --y-500: #FC7A1E;
+  --y-600: #FC7A1E;
+  --y-700: #FC7A1E;
+  --y-800: #FC7A1E;
+  --y-900: #FC7A1E;
+
+  --s-25: #FC7A1E;
+  --s-50: #FC7A1E;
+  --s-75: #FC7A1E;
+  --s-100: #FC7A1E;
+  --s-200: #FC7A1E;
+  --s-300: #FC7A1E;
+  --s-400: #FC7A1E;
+  --s-500: #FC7A1E;
+  --s-600: #FC7A1E;
+  --s-700: #FC7A1E;
+  --s-800: #FC7A1E;
+  --s-900: #FC7A1E;
+
+  --b-50: #FC7A1E;
+  --b-100: #FC7A1E;
+  --b-200: #FC7A1E;
+  --b-300: #FC7A1E;
+  --b-400: #FC7A1E;
+  --b-500: #FC7A1E;
+  --b-600: #FC7A1E;
+  --b-700: #FC7A1E;
+  --b-800: #FC7A1E;
+  --b-900: #FC7A1E;
+
+  --r-50: #FC7A1E;
+  --r-100: #FC7A1E;
+  --r-200: #FC7A1E;
+  --r-300: #FC7A1E;
+  --r-400: #FC7A1E;
+  --r-500: #FC7A1E;
+  --r-600: #FC7A1E;
+  --r-700: #FC7A1E;
+  --r-800: #FC7A1E;
+  --r-900: #FC7A1E;
+
+  --v-50: #FC7A1E;
+  --v-100: #FC7A1E;
+  --v-200: #FC7A1E;
+  --v-300: #FC7A1E;
+  --v-400: #FC7A1E;
+  --v-500: #FC7A1E;
+  --v-600: #FC7A1E;
+  --v-700: #FC7A1E;
+  --v-800: #FC7A1E;
+  --v-900: #FC7A1E;
+
+  // Common color aliases
+  --color-woot: hsl(var(--hello-500));
+
+  --color-heading: #FC7A1E;
+  --color-body: #FC7A1E;
+
+  --color-border: var(--s-75);
+  --color-border-light: var(--s-50);
+  --color-border-dark: var(--s-100);
+
+  --color-background: var(--s-50);
+  --color-background-light: var(--s-25);
+
+  // Social and inboxes brand colors
+  --color-facebook-brand: #FC7A1E;
+  --color-twitter-brand: #FC7A1E;
+  --color-whatsapp-brand: #FC7A1E;
+  --color-sms-twilio: #FC7A1E;
+  --color-cloud-generic: #FC7A1E;
+
+  // Tech-debt
+  --color-medium-gray: #FC7A1E;
+}
