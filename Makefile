@@ -1,5 +1,6 @@
 # Variables
 APP_NAME := colpari/hello
+APP_VERSION := 3.8.0
 RAILS_ENV ?= development
 
 # Targets
@@ -50,6 +51,6 @@ debug_worker:
 	overmind connect worker
 
 docker: 
-	docker build -t $(APP_NAME) -f ./docker/Dockerfile .
+	docker build -t $(APP_NAME):latest -t $(APP_NAME):$(APP_VERSION) -f ./docker/Dockerfile .
 
 .PHONY: setup db_create db_migrate db_seed db_reset db console server burn docker run force_run debug debug_worker
