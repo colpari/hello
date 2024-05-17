@@ -1,6 +1,6 @@
 # Variables
 APP_NAME := colpari/hello
-APP_VERSION := 3.8.0
+APP_VERSION := 3.9.0
 RAILS_ENV ?= development
 
 # Targets
