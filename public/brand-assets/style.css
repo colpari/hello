@@ -10,18 +10,18 @@ body {
     FIXME: firefox does not support this currently. if this is still the case when releasing colpari hello, we have
             to generate the whole scale explicitly and cannot use a --main-brand-color variable
 */
-  --hello-25: from var(--main-brand-color) h s calc(l + 0.60);
-  --hello-50: from var(--main-brand-color) h s calc(l + 0.54);
-  --hello-75: from var(--main-brand-color) h s calc(l + 0.45);
-  --hello-100: from var(--main-brand-color) h s calc(l + 0.36);
-  --hello-200: from var(--main-brand-color) h s calc(l + 0.27);
-  --hello-300: from var(--main-brand-color) h s calc(l + 0.18);
-  --hello-400: from var(--main-brand-color) h s calc(l + 0.09);
+  --hello-25: from var(--main-brand-color) h s calc(l + 60);
+  --hello-50: from var(--main-brand-color) h s calc(l + 54);
+  --hello-75: from var(--main-brand-color) h s calc(l + 45);
+  --hello-100: from var(--main-brand-color) h s calc(l + 36);
+  --hello-200: from var(--main-brand-color) h s calc(l + 27);
+  --hello-300: from var(--main-brand-color) h s calc(l + 18);
+  --hello-400: from var(--main-brand-color) h s calc(l + 09);
   --hello-500: from var(--main-brand-color) h s l;
-  --hello-600: from var(--main-brand-color) h s calc(l - 0.09);
-  --hello-700: from var(--main-brand-color) h s calc(l - 0.18);
-  --hello-800: from var(--main-brand-color) h s calc(l - 0.27);
-  --hello-900: from var(--main-brand-color) h s calc(l - 0.36);
+  --hello-600: from var(--main-brand-color) h s calc(l - 09);
+  --hello-700: from var(--main-brand-color) h s calc(l - 18);
+  --hello-800: from var(--main-brand-color) h s calc(l - 27);
+  --hello-900: from var(--main-brand-color) h s calc(l - 36);
 
   --w-25: hsl(var(--hello-25));
   --w-50: hsl(var(--hello-50));
